@@ -1,0 +1,256 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-size: 16px; /* حجم الخط الافتراضي */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    background-color: rgb(246, 245, 243);
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    color: #190505;
+    font-size: 2rem;
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    background-color: rgb(49, 10, 177);
+    padding: 20px;
+}
+
+#contacts {
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+.add-new-contact {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.add-new-contact img {
+    margin-right: 5px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* تخطيط العناصر للأسفل في الأجهزة الصغيرة */
+}
+
+.search-container input[type=text] {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.contacts-list {
+    display: grid;
+    gap: 15px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #efe9e9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.contact:hover {
+    background-color: #f3e9e9;
+}
+
+.contact img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.contact-details {
+    flex-grow: 1;
+}
+
+.contact-details h3 {
+    margin: 0;
+    color: #334db1;
+    font-size: 1.8rem;
+}
+
+.contact-details p {
+    margin: 5px 0;
+    color: #122087;
+    font-size: 1.3rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-content input[type=text] {
+    width: calc(100% - 16px); /* العرض للجوالات */
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(237, 237, 237);
+    color: #0f0101;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Media Query for Small Screens */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px; /* تقليل حجم الخط لأجهزة الجوال */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* تقليل حجم عنوان الرأس الرئيسي للجوال */
+    }
+
+    main {
+        padding: 10px; /* تقليل الحشو الرئيسي للجوال */
+    }
+
+    .add-new-contact {
+        flex-direction: column; /* تخطيط العناصر الجديدة للأسفل بدلاً من الأفقي */
+        align-items: flex-start; /* محاذاة العناصر إلى اليسار */
+    }
+
+    .add-new-contact img {
+        margin-right: 0; /* إزالة هامش الصورة على الجوال */
+        margin-bottom: 5px; /* إضافة هامش أسفل الصورة */
+    }
+
+    .search-container {
+        display: flex;
+        flex-direction: column; /* تخطيط الحاوية البحثية للأسفل */
+    }
+
+    .search-container input[type=text] {
+        margin-right: 0; /* إزالة هامش الحقل النصي على الجوال */
+        margin-bottom: 10px; /* إضافة هامش أسفل الحقل النصي */
+    }
+
+    .contacts-list {
+        grid-template-columns: 1fr; /* عرض عمودي لقائمة الأسماء بدلاً من الشبكة */
+    }
+
+    .contact {
+        flex-direction: column; /* تخطيط الاتصالات للأسفل */
+        align-items: flex-start; /* محاذاة العناصر إلى اليسار */
+    }
+
+    .contact img {
+        margin-right: 0; /* إزالة هامش الصورة على الجوال */
+        margin-bottom: 10px; /* إضافة هامش أسفل الصورة */
+    }
+
+    .contact-details {
+        text-align: left; /* محاذاة تفاصيل الاتصال إلى اليسار */
+    }
+
+    .modal-content {
+        width: 90%; /* جعل عرض المحتوى النموذجي أكبر ليناسب الشاشات الصغيرة */
+        max-width: 300px; /* عرض أقصى للنموذجية للحفاظ على التنسيق */
+    }
+}
